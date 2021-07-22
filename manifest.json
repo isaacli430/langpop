@@ -1,0 +1,33 @@
+{
+	"name": "LangPop",
+	"version": "1.0",
+	"manifest_version": 3,
+	"background": {
+		"service_worker": "background.js"
+	},
+	"action": {
+		"default_popup": "main.html"
+	},
+	"permissions": [
+		"tabs",
+		"scripting",
+		"storage"
+	],
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"css": [
+				"content-sheet.css"
+			],
+			"js": [
+				"jquery.min.js",
+				"content-script.js"
+			]
+		}
+	],
+	"host_permissions": [
+		"<all_urls>"
+	]
+}
